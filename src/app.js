@@ -6,8 +6,17 @@ async function sentTextMessage(chatId, prompt) {
   result = myGreen.sendMessage(chatId, prompt);
 
   console.log(result);
-
-  //console.log(`Records from view: ${viewName}`);
 }
 
-sentTextMessage(process.env.TEST_NUMBER, "בדיקה של שגיא");
+async function sendFileByUrl(chatId, prompt, fileUrl) {
+  result = myGreen.sendFileByUrl(chatId, prompt, fileUrl);
+
+  console.log(result);
+}
+
+// sentTextMessage(process.env.TEST_NUMBER, "בדיקה של שגיא");
+sendFileByUrl(
+  process.env.TEST_NUMBER,
+  "בדיקה של שליחת קובץ mp3",
+  process.env.MP3_TEST_URL
+);

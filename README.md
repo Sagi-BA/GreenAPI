@@ -1,10 +1,8 @@
 ![Alt text](https://media.licdn.com/dms/image/D4D16AQEbR646hmY3bg/profile-displaybackgroundimage-shrink_350_1400/0/1713437135249?e=1721260800&v=beta&t=OQyEZRB5hLvjqYXpHNpFol8GptSa3h0WArFmYQPHEUc)
 
-# 👇 Green API
+# 👀 Green API WhatsApp Client
 
-[![](https://img.shields.io/badge/Node.js-white?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E)](https://nodejs.org/)
-
-## 👇 Support links
+This project provides a simple wrapper class for interacting with the Green API WhatsApp client. It allows you to send messages and files to WhatsApp chats using the Green API.
 
 [![Support](https://img.shields.io/badge/linktree-white?style=for-the-badge&logo=linktree&logoColor=43E55E)](https://linktr.ee/sagib?lt_utm_source=lt_share_link#373198503)
 [![Support](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
@@ -12,89 +10,176 @@
 [![Support](https://img.shields.io/badge/whatsapp-white?style=for-the-badge&logo=whatsapp&logoColor=25D366)](https://api.whatsapp.com/send?phone=972549995050)
 [![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
 [![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
+[![](https://img.shields.io/badge/Node.js-white?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E)](https://nodejs.org/)
 
-## 👀 What Do I See?
+## Table of Contents
 
-I created a class to ask questions to an AI and get responses. I'm using the [Groq API](https://groq.com/) - a powerful language model.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [API](#api)
+- [Tutorial Video](#api)
+- [License](#license)
 
-[Rate Limits for Free Beta](https://console.groq.com/settings/limits)
+## Installation
 
-The rate limits for the Free Beta are as follows:
-| ID | REQUESTS PER MINUTE | REQUESTS PER DAY | TOKENS PER MINUTE |
-|-------------------|---------------------|------------------|-------------------|
-| gemma-7b-it | 30 | 14,400 | 15,000 |
-| mixtral-8×7b-32768| 30 | 14,400 | 5,000 |
-| llama3-70b-8192 | 30 | 14,400 | 6,000 |
-| llama3-8b-8192 | 30 | 14,400 | 30,000 |
+To use this project, you need to have Node.js and npm installed on your machine. Then, follow these steps:
 
-## 👉 Guides & News
+1. Clone the repository:
 
-To get started, follow these steps:
+   ```sh
+   git clone git clone https://github.com/Sagi-BA/GreenAPI.git
+   cd GreenAPI
+   ```
 
-1. Clone the repository using:
+2. Install the dependencies:
+   ```sh
+   npm install
+   ```
 
-```shell
-git clone https://github.com/Sagi-BA/groq.git
-```
+## Usage
 
-2. Install the required dependencies by running:
+### Basic Example
 
-```shell
-npm install --omit=dev
-```
-
-3. Create a .env file in the root folder of the project. Use the [env.example](env.example) file as a template and add your environment variables.
-
-4. Register on the Groq platform and create an [API Key](https://console.groq.com/keys)
-
-5. To test the application, run the [app.js](app.js) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
-
-## 👉 Dependencies
-
-To install the required dependencies, run the following commands:
-
-```shell
-npm install dotenv --save
-npm install @green-api/whatsapp-api-client --save
-```
-
-You can find the complete list of dependencies in the [package.json](package.json)
-file.
-
-## 👉 Authorization
-
-FREE
-
-## 👉 Authentication
-
-FREE
-
-## 👉 Examples
-
-Here, I demonstrate how to use the [GroqClass()](src/GroqClass.js)
-
-### 🚀 Send a Prompt Message to Groq
+Here's a basic example of how to use the GreenapiClass to send a message:
 
 ```javascript
-// Import the GroqManager class using CommonJS syntax
-const GroqClass = require("./GroqClass");
+require("dotenv").config();
+const GreenapiClass = require("./GreenapiClass");
 
-// Main function to send a user prompt and handle the response
-async function main() {
-  const mygroq = new GroqClass();
-  const userPrompt = "Who is Anthony Hopkins?";
+const greenApi = new GreenapiClass();
 
-  const response = await mygroq.sendPrompt(userPrompt);
+// Replace with your chat ID and message
+const chatId = "CHAT_ID";
+const message = "Hello, this is a test message!";
 
-  if (response) {
-    console.log(response.choices[0]?.message?.content || "");
-  } else {
-    console.error("Failed to get a response from Groq.");
-  }
-}
-
-// Call the main function
-main().catch(console.error);
+greenApi
+  .sendMessage(chatId, message)
+  .then((result) => {
+    if (result) {
+      console.log("Message sent successfully!");
+    } else {
+      console.log("Failed to send message.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 ```
+
+### Sending a File
+
+Here's how to send a file by URL:
+
+```javascript
+require("dotenv").config();
+const GreenapiClass = require("./GreenapiClass");
+
+const greenApi = new GreenapiClass();
+
+// Replace with your chat ID, message, and file URL
+const chatId = "CHAT_ID";
+const message = "Here is the file you requested.";
+const fileUrl = "https://example.com/path/to/your/file.mp3";
+
+greenApi
+  .sendFileByUrl(chatId, message, fileUrl)
+  .then((result) => {
+    if (result) {
+      console.log("File sent successfully!");
+    } else {
+      console.log("Failed to send file.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+```
+
+## Configuration
+
+The project uses environment variables to configure the Green API instance. Create a .env file in the root of your project and add the following variables:
+
+```.env
+GREENAPI_ENDPOINT_URL='https://api.green-api.com'
+MP3_TEST_URL='XXX'
+GREENAPI_ID_INSTANCE=your_instance_id
+GREENAPI_ACCESS_TOKEN=your_access_token
+TEST_NUMBER='XXX@c.us'
+```
+
+1. Replace your_instance_id and your_access_token with your actual Green API instance ID and access token.
+
+2. Create a .env file in the root folder of the project. Use the [env.example](env.example) file as a template and add your environment variables.
+
+3. Register on the Green API platform for send whatsApp message [API Key]https://console.green-api.com/)
+
+4. To test the application, run the [app.js](app.js) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
+
+## API
+
+### Class: GreenapiClass
+
+#### Method: sendMessage(chatId, message)
+
+- Parameters:
+
+  - chatId (string): The unique identifier of the chat to send the message to.
+  - message (string): The content of the message to be sent.
+
+- Returns
+  - Promise<boolean>: Returns true if the message was successfully sent, otherwise false.
+
+Example:
+
+```javascript
+greenApi.sendMessage("CHAT_ID", "Hello, World!").then((result) => {
+  if (result) {
+    console.log("Message sent successfully!");
+  } else {
+    console.log("Failed to send message.");
+  }
+});
+```
+
+#### Method: sendFileByUrl(chatId, message, fileUrl)
+
+- Parameters:
+
+  - chatId (string): The unique identifier of the chat to send the file to.
+  - message (string): The content of the message to be sent along with the file.
+  - fileUrl (string): The URL of the file to be sent.
+
+- Returns:
+  - Promise<boolean>: Returns true if the file was successfully sent, otherwise false.
+
+Example:
+
+```javascript
+greenApi
+  .sendFileByUrl(
+    "CHAT_ID",
+    "Here is your file.",
+    "https://example.com/file.mp3"
+  )
+  .then((result) => {
+    if (result) {
+      console.log("File sent successfully!");
+    } else {
+      console.log("Failed to send file.");
+    }
+  });
+```
+
+## Tutorial Video
+
+Watch the tutorial video on YouTube:
+[![Watch tutorial video on YouTube](https://i9.ytimg.com/vi/Z1s2cxPkD3M/mq1.jpg?sqp=CIzZqLIG-oaymwEmCMACELQB8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGA8gZShJMA8=&rs=AOn4CLAQZtkxXki82Sm55kvZfnlj-5aymQ)](https://www.youtube.com/watch?v=Z1s2cxPkD3M)
+
+- The `[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=JQQ1lt4Xrsg)`
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
 # I Am that I Am, I will be what I will be
