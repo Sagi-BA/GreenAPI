@@ -1,0 +1,23 @@
+{
+  "name": "green-api",
+  "version": "1.0.0",
+  "description": "A project to send whatsapp prompt",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "green-api"
+  },
+  "keywords": [
+    "whatsapp",
+    "greenapi"
+  ],
+  "author": "sagi bar on <sagi.baron76@gmail.com> (https://github.com/Sagi-BA)",
+  "license": "ISC",
+  "dependencies": {
+    "@green-api/whatsapp-api-client": "^0.3.39",
+    "dotenv": "^16.4.5"
+  }
+}
