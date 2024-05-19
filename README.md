@@ -175,7 +175,7 @@ greenApi
 
 Watch the tutorial video on YouTube:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Z1s2cxPkD3M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch tutorial video on YouTube](https://i9.ytimg.com/vi/Z1s2cxPkD3M/mq1.jpg?sqp=CIzZqLIG-oaymwEmCMACELQB8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGA8gZShJMA8=&rs=AOn4CLAQZtkxXki82Sm55kvZfnlj-5aymQ)](https://www.youtube.com/watch?v=Z1s2cxPkD3M)
 
 ## License
 
