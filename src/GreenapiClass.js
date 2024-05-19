@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require("dotenv").config();
 const whatsAppClient = require("@green-api/whatsapp-api-client");
 
 class GreenapiClass {
@@ -38,12 +38,6 @@ class GreenapiClass {
       );
       console.log(response.idMessage);
       if (response.idMessage) this.result = true;
-      //   this.restAPI.message.sendMessage(chatId, null, message)
-      // .then((data) => {
-      //     console.log(data);
-      //   }) ;
-
-      // console.info(JSON.stringify({level: "info", message: (`Data processed and forwarded to GREEN API: ${greenApiResponse.status} `)}));
     } catch (err) {
       console.error(
         JSON.stringify({
