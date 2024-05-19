@@ -1,3 +1,4 @@
 node_modules
 .env
 GreenAPI.code-workspace
+build.bat

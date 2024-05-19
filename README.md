@@ -1,6 +1,6 @@
 ![Alt text](https://media.licdn.com/dms/image/D4D16AQEbR646hmY3bg/profile-displaybackgroundimage-shrink_350_1400/0/1713437135249?e=1721260800&v=beta&t=OQyEZRB5hLvjqYXpHNpFol8GptSa3h0WArFmYQPHEUc)
 
-# 👀 Green API WhatsApp Client
+# 👀 Green API WhatsApp messages
 
 This project provides a simple wrapper class for interacting with the Green API WhatsApp client. It allows you to send messages and files to WhatsApp chats using the Green API.
 
@@ -175,8 +175,6 @@ greenApi
 
 Watch the tutorial video on YouTube:
 [![Watch tutorial video on YouTube](https://i9.ytimg.com/vi/Z1s2cxPkD3M/mq1.jpg?sqp=CIzZqLIG-oaymwEmCMACELQB8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGA8gZShJMA8=&rs=AOn4CLAQZtkxXki82Sm55kvZfnlj-5aymQ)](https://www.youtube.com/watch?v=Z1s2cxPkD3M)
-
-- The `[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=JQQ1lt4Xrsg)`
 
 ## License
 
