@@ -2,7 +2,7 @@
 
 # 👀 Green API WhatsApp messages
 
-This project provides a simple wrapper class for interacting with the Green API WhatsApp client. It allows you to send messages and files to WhatsApp chats using the Green API.
+This project demonstrates how to use the [Green API](https://api.green-api.com) to send WhatsApp messages and files using both Node.js and Python. It includes examples of how to send text messages and files via URL to a specified chat.
 
 [![Support](https://img.shields.io/badge/linktree-white?style=for-the-badge&logo=linktree&logoColor=43E55E)](https://linktr.ee/sagib?lt_utm_source=lt_share_link#373198503)
 [![Support](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
@@ -10,7 +10,6 @@ This project provides a simple wrapper class for interacting with the Green API 
 [![Support](https://img.shields.io/badge/whatsapp-white?style=for-the-badge&logo=whatsapp&logoColor=25D366)](https://api.whatsapp.com/send?phone=972549995050)
 [![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
 [![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
-[![](https://img.shields.io/badge/Node.js-white?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E)](https://nodejs.org/)
 
 ## Table of Contents
 
@@ -25,23 +24,32 @@ This project provides a simple wrapper class for interacting with the Green API 
 
 To use this project, you need to have Node.js and npm installed on your machine. Then, follow these steps:
 
-1. Clone the repository:
+Clone the repository to your local machine.
 
-   ```sh
-   git clone git clone https://github.com/Sagi-BA/GreenAPI.git
-   cd GreenAPI
-   ```
+```bash
+git clone git clone https://github.com/Sagi-BA/GreenAPI.git
+cd GreenAPI
+```
 
-2. Install the dependencies:
-   ```sh
-   npm install
-   ```
+Install the dependencies for javascript:
+
+```bash
+npm install
+```
+
+Install the dependencies for Python:
+
+```bash
+python -m venv myenv
+source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
+pip install -r requirements.txt
+```
 
 ## Usage
 
 ### Basic Example
 
-Here's a basic example of how to use the GreenapiClass to send a message:
+Here's a basic example of how to use the GreenapiClass to send a message from JavaScript:
 
 ```javascript
 require("dotenv").config();
@@ -69,7 +77,7 @@ greenApi
 
 ### Sending a File
 
-Here's how to send a file by URL:
+Here's how to send a file by URL from JavaScript:
 
 ```javascript
 require("dotenv").config();
@@ -112,9 +120,9 @@ TEST_NUMBER='XXX@c.us'
 
 2. Create a .env file in the root folder of the project. Use the [env.example](env.example) file as a template and add your environment variables.
 
-3. Register on the Green API platform for send whatsApp message [API Key]https://console.green-api.com/)
+3. Register on the Green API platform for send whatsApp message [API Key](https://console.green-api.com/)
 
-4. To test the application, run the [app.js](app.js) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
+4. To test the application, run the [app.js](./src/app.js) or [app.py](./src/app.py) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
 
 ## API
 
@@ -142,7 +150,7 @@ greenApi.sendMessage("CHAT_ID", "Hello, World!").then((result) => {
 });
 ```
 
-#### Method: sendFileByUrl(chatId, message, fileUrl)
+#### Method: sendMessagewithFile(chatId, message, fileUrl)
 
 - Parameters:
 
@@ -179,6 +187,6 @@ Watch the tutorial video on YouTube:
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more information.
+This project is licensed under the ISC License. See the LICENSE file for details.
 
 # I Am that I Am, I will be what I will be
