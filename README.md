@@ -1,4 +1,4 @@
-![Alt text]([https://media.licdn.com/dms/image/D4D16AQEbR646hmY3bg/profile-displaybackgroundimage-shrink_350_1400/0/1713437135249?e=1721260800&v=beta&t=OQyEZRB5hLvjqYXpHNpFol8GptSa3h0WArFmYQPHEUc](https://i.imgur.com/RhRQLLN.jpg))
+![Alt text](https://i.imgur.com/RhRQLLN.jpg)
 
 # 👀 Green API WhatsApp messages
 
